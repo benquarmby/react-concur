@@ -11,15 +11,28 @@ class: center middle
 
 ---
 
-# The "what" and "why"
+# Understanding the Aussie accent
 
-* Component schema
+## Source
+## Sauce
 
-* Contract with consumers
+???
 
-* Self documentation
+- Secret to understanding the Aussie accent
+- Pronounce a couple of words and you'll be able to hear the difference - it will all make sense
+- So clear once you know what to listen for right?
 
-* Validation
+---
+
+# PropTypes - The "what" and "why"
+
+## Component schema
+
+## Contract with consumers
+
+## Self documentation
+
+## Validation
 
 ???
 
@@ -78,6 +91,12 @@ MyComponent.propTypes = {
 
 export default MyComponent;
 ```
+
+???
+
+- Moving forward quite quickly
+- Discussions around using Flow and type inference to drive prop types
+- Regardless of how it's done, PropTypes are important
 
 ---
 
@@ -167,7 +186,7 @@ MyComponent.propTypes = {
 
 ---
 
-# What about dictionaries and lists?
+# Dictionaries and lists
 
 ## Use `objectOf` and `arrayOf`.
 
@@ -203,6 +222,27 @@ MyComponent.propTypes = {
 
 ---
 
+# Enums
+
+## Use `oneOf`
+
+```JavaScript
+MyComponent.propTypes = {
+    shopType: PropTypes.oneOf([
+        "BY_PRICE",
+        "BY_SCHEDULE",
+        "FLEX_FARE"
+    ]).isRequired
+};
+```
+
+???
+
+- Genuinely useful
+- Core UI use this quite a lot
+
+---
+
 # Heterogeneous props
 
 ## Use `oneOfType`
@@ -212,18 +252,6 @@ MyComponent.propTypes = {
     airports: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
-    ]).isRequired
-};
-```
-
-## For enums use `oneOf`
-
-```JavaScript
-MyComponent.propTypes = {
-    shopType: PropTypes.oneOf([
-        "BY_PRICE",
-        "BY_SCHEDULE",
-        "FLEX_FARE"
     ]).isRequired
 };
 ```
@@ -326,12 +354,15 @@ export default awesome;
 
 - Actual signature excludes `isRequired`
 - Curry to create two versions
+- Before you do this - check the community
 
 ---
 
 # Extra resources
 
 * GitHub: [reactjs/prop-types](https://github.com/reactjs/prop-types)
+
+* Airbnb PropTypes: [airbnb/prop-types](https://github.com/airbnb/prop-types)
 
 * Facebook: [Typechecking With PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
 
